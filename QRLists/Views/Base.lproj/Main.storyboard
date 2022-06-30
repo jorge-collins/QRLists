@@ -31,7 +31,13 @@
                             <outlet property="delegate" destination="cDr-lk-yx8" id="K1H-E1-pZ9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="QR Lists" id="J8p-2G-HCK"/>
+                    <navigationItem key="navigationItem" title="QR Lists" id="J8p-2G-HCK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="D9y-xB-2hN">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="cDr-lk-yx8" id="43o-eQ-rAI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzu-vY-kEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

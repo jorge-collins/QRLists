@@ -14,6 +14,7 @@
 		6140C375286B63AE00F27179 /* QRLists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6140C373286B63AE00F27179 /* QRLists.xcdatamodeld */; };
 		6140C377286B63B000F27179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6140C376286B63B000F27179 /* Assets.xcassets */; };
 		6140C37A286B63B000F27179 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6140C378286B63B000F27179 /* LaunchScreen.storyboard */; };
+		6140C385286CC31B00F27179 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6140C384286CC31B00F27179 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6140C376286B63B000F27179 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6140C379286B63B000F27179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6140C37B286B63B000F27179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6140C384286CC31B00F27179 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +62,39 @@
 			children = (
 				6140C36A286B63AE00F27179 /* AppDelegate.swift */,
 				6140C36C286B63AE00F27179 /* SceneDelegate.swift */,
-				6140C36E286B63AE00F27179 /* QRListViewController.swift */,
-				6140C370286B63AE00F27179 /* Main.storyboard */,
+				6140C381286CBCE900F27179 /* Controllers */,
+				6140C383286CBD0C00F27179 /* Data Model */,
+				6140C382286CBCFD00F27179 /* Views */,
 				6140C376286B63B000F27179 /* Assets.xcassets */,
 				6140C378286B63B000F27179 /* LaunchScreen.storyboard */,
 				6140C37B286B63B000F27179 /* Info.plist */,
-				6140C373286B63AE00F27179 /* QRLists.xcdatamodeld */,
 			);
 			path = QRLists;
+			sourceTree = "<group>";
+		};
+		6140C381286CBCE900F27179 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6140C36E286B63AE00F27179 /* QRListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6140C382286CBCFD00F27179 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6140C370286B63AE00F27179 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6140C383286CBD0C00F27179 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				6140C373286B63AE00F27179 /* QRLists.xcdatamodeld */,
+				6140C384286CC31B00F27179 /* Item.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6140C385286CC31B00F27179 /* Item.swift in Sources */,
 				6140C36F286B63AE00F27179 /* QRListViewController.swift in Sources */,
 				6140C36B286B63AE00F27179 /* AppDelegate.swift in Sources */,
 				6140C375286B63AE00F27179 /* QRLists.xcdatamodeld in Sources */,
