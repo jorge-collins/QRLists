@@ -6,18 +6,22 @@
 //
 
 import UIKit
+import CoreData
 
 // "QR" en lugar de "Todo"
 class QRListViewController: UITableViewController {
 
     var itemArray = [Item]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        print(dataFilePath!)
-
+//        print(dataFilePath!)
+        print("--- viewDidLoad")
+        
         loadItems()
     }
 
@@ -71,8 +75,10 @@ class QRListViewController: UITableViewController {
             
             if textField.text != "" {
                 
-                let newItem = Item()
+                
+                let newItem = Item(context: self.context)
                 newItem.title = textField.text!
+                newItem.done = false
                 
                 self.itemArray.append(newItem)
                 
@@ -94,11 +100,9 @@ class QRListViewController: UITableViewController {
     //MARK: - Model manipulation
     
     func saveItems() {
-        let encoder = PropertyListEncoder()
         
         do {
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+            try context.save()
         } catch {
             print("Error encoding items, \(error)")
         }
@@ -107,17 +111,14 @@ class QRListViewController: UITableViewController {
     }
     
     func loadItems() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            
-            let decoder = PropertyListDecoder()
-            
-            do {
-                itemArray = try decoder.decode([Item].self, from: data)
-            } catch {
-                print("Error decoding items, \(error)")
-            }
-            
+        
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
         }
+        
     }
 
 
